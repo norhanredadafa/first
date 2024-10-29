@@ -2,6 +2,6 @@
 
 <template>
   <main>
-    <h1>home</h1>
+    <h1 class="bg-orange-700">home</h1>
   </main>
 </template>
