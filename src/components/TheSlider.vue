@@ -2,11 +2,11 @@
   <div class="mt-8">
   <div class="flex justify-between" >
     
-  <button @click="prevImg" class="h-10 w-10 mt-16 rounded-full border-black border-2 border-solid"> &lt; </button>
+  <button @click="prevImg" class="h-10 w-10 mt-32 -mr-1 z-10 rounded-full border-black border-2 border-solid"> &lt; </button>
 
-  <img :src="images[currentIndex].src" alt="image"/>
+  <img height="400" width="800" :src="images[currentIndex].src" alt="image"/>
 
-  <button @click="nextImg" class="h-10 w-10 mt-16 rounded-full border-black border-2 border-solid"> &gt; </button>
+  <button @click="nextImg" class="h-10 w-10 mt-32 -ml-1 z-10 rounded-full border-black border-2 border-solid"> &gt; </button>
   </div>
 
   </div>
