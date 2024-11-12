@@ -3,7 +3,7 @@
     <header class="flex justify-between items-center p-4">
       <div class="flex-shrink-0">
         <img
-          src="../assets/images/Untitled.jpeg"
+          src="/images/logo.jpeg"
           width="100"
           height="100"
           alt="logo"
