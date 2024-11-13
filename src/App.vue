@@ -4,11 +4,17 @@ import headerComp from './components/TheHeader.vue'
 </script>
 
 <template>
-  <div>
+ 
     <headerComp />
 
     <RouterView />
-  </div>
+
 </template>
 
-<style scoped></style>
+<style >
+*{
+  padding: 0;
+  margin: 0;
+}
+
+</style>

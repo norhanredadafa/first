@@ -1,26 +1,33 @@
 <template>
-  <div class="mt-8">
-  <div class="flex justify-between" >
-    
-  <button @click="prevImg" class="h-10 w-10 mt-32 -mr-1 z-10 rounded-full border-black border-2 border-solid"> &lt; </button>
+  <div class="slideshow-container">
 
-  <img height="400" width="800" :src="images[currentIndex].src" alt="image"/>
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">{{ currentIndex+1 }} / {{ images.length }}</div>
+      <img :src="images[currentIndex].src" style="width:100%" />
+      <div class="text">Caption Text</div>
+    </div>
 
-  <button @click="nextImg" class="h-10 w-10 mt-32 -ml-1 z-10 rounded-full border-black border-2 border-solid"> &gt; </button>
+    <!-- Next and previous buttons -->
+    <a @click="prevImg" class="prev">&#10094;</a>
+    <a @click="nextImg" class="next">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div  style="text-align:center">
+    <span v-for="(image, index) in images" :key="index" class="dot"></span>
   </div>
 
-  </div>
+
 </template>
 
 <script lang="ts">
 export default {
   data() {
     return {
-      currentIndex:1,
+      currentIndex: 1,
       images: [{
-        src: "/images/1.jpeg"
-      },
-      {
         src: "/images/1.jpeg"
       },
       {
@@ -35,31 +42,27 @@ export default {
       {
         src: "/images/5.jpeg"
       },
-    ]
+      ]
     }
   },
-  methods:{
-    nextImg()
-    {
-      if(this.currentIndex === this.images.length )
-    {
-      this.currentIndex=0;
-    }
-    else {
-      this.currentIndex++;
-    }
+  methods: {
+    nextImg() {
+      if (this.currentIndex === this.images.length) {
+        this.currentIndex = 0;
+      }
+      else {
+        this.currentIndex++;
+      }
 
 
     },
-    prevImg()
-    {
-      if(this.currentIndex === 0 )
-    {
-      this.currentIndex=this.images.length;
-    }
-    else {
-      this.currentIndex--;
-    }
+    prevImg() {
+      if (this.currentIndex === 0) {
+        this.currentIndex = this.images.length;
+      }
+      else {
+        this.currentIndex--;
+      }
     },
 
   }
@@ -67,5 +70,70 @@ export default {
 </script>
 
 <style scoped>
-/* You can add any additional styles here if needed */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
 </style>

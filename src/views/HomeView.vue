@@ -1,7 +1,7 @@
 
 
 <template>
-  <main>
+  <main  class="mt-64 w-screen">
     <h1 class="bg-orange-700">home</h1>
     <TheSlider/>
   </main>
@@ -21,3 +21,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  main{
+    /* width: 100%;
+    max-width: 100vw; */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+</style>

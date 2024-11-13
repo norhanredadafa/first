@@ -1,6 +1,6 @@
 <template>
   <div class="fixed top-0 left-0 w-full bg-white shadow">
-    <header class="flex justify-between items-center p-4">
+    <header class="flex justify-between items-center p-1">
       <div class="flex-shrink-0">
         <img
           src="/images/logo.jpeg"
