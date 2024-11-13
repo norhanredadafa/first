@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     nextImg() {
-      if (this.currentIndex === this.images.length) {
+      if (this.currentIndex === this.images.length-1) {
         this.currentIndex = 0;
       }
       else {
