@@ -2,7 +2,7 @@
 
 <template>
   <main  class="mt-64 w-screen">
-    <h1 class="bg-orange-700">home</h1>
+    <h1 class="text-center">home</h1>
     <TheSlider/>
   </main>
 </template>
