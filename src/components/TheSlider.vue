@@ -4,7 +4,7 @@
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
       <div class="numbertext">{{ currentIndex+1 }} / {{ images.length }}</div>
-      <img :src="images[currentIndex].src" style="width:100%" />
+      <img :src="images[currentIndex].src" style="width:100%; height: 500px;"  />
       <div class="text">Caption Text</div>
     </div>
 
@@ -26,7 +26,7 @@
 export default {
   data() {
     return {
-      currentIndex: 1,
+      currentIndex: 0,
       images: [{
         src: "/images/1.jpeg"
       },
@@ -73,7 +73,7 @@ export default {
 .slideshow-container {
   max-width: 1000px;
   position: relative;
-  margin: auto;
+  margin: 20px auto;
 }
 
 
