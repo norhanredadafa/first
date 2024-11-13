@@ -16,7 +16,7 @@
 
   <!-- The dots/circles -->
   <div  style="text-align:center">
-    <span v-for="(image, index) in images" :key="index" class="dot"></span>
+    <span @click="changeCurrentIndex(index)" :class="index===currentIndex? 'active':''" v-for="(image, index) in images" :key="index" class="dot"></span>
   </div>
 
 
@@ -64,6 +64,10 @@ export default {
         this.currentIndex--;
       }
     },
+    changeCurrentIndex(index:number) {
+      this.currentIndex = index;
+
+    }
 
   }
 }
